@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Joe on GitHub</title>
+        <link rel="stylesheet" href="http://joe.gl/Content/Site.css" />
+    </head>
+    <body>
+        <h1>
+            <span class="lrg">JOE</span>
+            <span>ON</span>
+            <span class="med">GITHUB</span>
+        </h1>
+        
+        <nav style="text-align:center;">
+            <ul id="nav">
+                <li><a href="http://joe.gl">My Homepage</a></li>
+                <li><a href="https://github.com/jaypeagi">My GitHub Profile</a></li>
+            </ul>
+            <h2>Recently Updated Projects:</h2>
+            <ul id="projects">
+            </ul>
+        </nav>
+        <footer>&copy; Joe Glombek 2014</footer>
+        
+        <script type="text/javascript" src="http://code.jquery.com/jquery-2.1.0.min.js"></script>
+        <script>
+            $(function() {
+                $.get("https://api.github.com/users/jaypeagi/repos",
+                      { sort: "updated" },
+                      function(data) {
+                        $.each(data, function(i, e) {
+                            if(i > 9) return false;
+                            var li = $("<li/>");
+                            var a = $("<a/>")
+                            a.attr("href", e.html_url);
+                            a.text(e.description || e.name);
+                            li.append(a);
+                            $("#projects").append(li);
+                        });
+                });
+            });
+        </script>
+    </body>
+</html>
