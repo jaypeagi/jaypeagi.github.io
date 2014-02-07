@@ -23,6 +23,10 @@
                 -webkit-transform-origin: center;
                 transform-origin: center;
             }
+            
+            nav section {
+                margin: 1em;
+            }
         </style>
     </head>
     <body>
@@ -33,15 +37,26 @@
         </h1>
         
         <nav style="text-align:center;">
-            <ul id="nav">
-                <li><a href="http://joe.gl">My Homepage</a></li>
-                <li><a href="https://github.com/jaypeagi">My GitHub Profile</a></li>
-                <li><a href="http://average-joe.info">Average Joe - Developer Blog</a></li>
-                <li><a href="http://loveht.ml">LoveHTML - HTML Blog</a></li>
-            </ul>
-            <h2>Recently Updated Projects:</h2>
-            <ul id="projects">
-            </ul>
+            <section>
+                <ul id="nav">
+                    <li><a href="http://joe.gl">My Homepage</a></li>
+                    <li><a href="https://github.com/jaypeagi">My GitHub Profile</a></li>
+                    <li><a href="http://average-joe.info">Average Joe - Developer Blog</a></li>
+                    <li><a href="http://loveht.ml">LoveHTML - HTML Blog</a></li>
+                </ul>
+            </section>
+            
+            <section>
+                <h2>My Recently Updated Projects:</h2>
+                <ul id="projects">
+                </ul>
+            </section>
+            
+            <section>
+                <h2>Also a Member of:</h2>
+                <div id="orgs">
+                </div>
+            </section>
         </nav>
         <footer>&copy; Joe Glombek 2014</footer>
         
@@ -54,11 +69,25 @@
                         $.each(data, function(i, e) {
                             if(i > 9) return false;
                             var li = $("<li/>");
-                            var a = $("<a/>")
+                            var a = $("<a/>");
                             a.attr("href", e.html_url);
                             a.text(e.description || e.name);
                             li.append(a);
                             $("#projects").append(li);
+                        });
+                });
+                $.get("https://api.github.com/users/jaypeagi/orgs",
+                      function(data) {
+                        $.each(data, function(i, e) {
+                            if(i > 9) return false;
+                            //var li = $("<li/>");
+                            var a = $("<a/>");
+                            var img = $("<img/>");
+                            a.attr("href", "https://github.com/orgs/" + e.login);
+                            a.attr("title", e.login);
+                            img.attr("src", e.avatar_url);
+                            a.append(img);
+                            $("#orgs").append(a);
                         });
                 });
             });
