@@ -44,7 +44,7 @@
             <section>
                 <ul id="nav">
                     <li><a href="http://joe.gl">My Homepage</a></li>
-                    <li><a href="https://github.com/jaypeagi">My GitHub Profile</a></li>
+                    <li><a href="https://github.com/glombek">My GitHub Profile</a></li>
                     <li><a href="http://average-joe.info">Average Joe - Developer Blog</a></li>
                     <li><a href="http://loveht.ml">LoveHTML - HTML Blog</a></li>
                 </ul>
@@ -67,7 +67,7 @@
         <script type="text/javascript" src="http://code.jquery.com/jquery-2.1.0.min.js"></script>
         <script>
             $(function() {
-                $.get("https://api.github.com/users/jaypeagi/repos",
+                $.get("https://api.github.com/users/glombek/repos",
                       { sort: "updated" },
                       function(data) {
                         $.each(data, function(i, e) {
@@ -80,7 +80,7 @@
                             $("#projects").append(li);
                         });
                 });
-                $.get("https://api.github.com/users/jaypeagi/orgs",
+                $.get("https://api.github.com/users/glombek/orgs",
                       function(data) {
                         $.each(data, function(i, e) {
                             if(i > 9) return false;
