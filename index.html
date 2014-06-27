@@ -73,9 +73,16 @@
                             if(i > 9) return false;
                             var li = $("<li/>");
                             var a = $("<a/>");
-                            a.attr("href", e.html_url);
+                            a.attr("href", e.homepage || e.html_url);
                             a.text(e.description || e.name);
                             li.append(a);
+                            if(e.homepage) {
+                                var a2 = $("<a/>");
+                                a2.attr("href", e.html_url);
+                                a2.text("Source");
+                                li.append(" | ");
+                                li.append(a2);
+                            }
                             $("#projects").append(li);
                         });
                 });
