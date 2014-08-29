@@ -15,16 +15,17 @@ $(function() {
                             a.append(h3);
                             a.attr("href", e.homepage || e.html_url);
                             h3.text(e.name);
-                            li.append(a);
                             var desc = $("<p></p>");
                             desc.text(e.description);
-                            li.append(desc);
-                            if(e.homepage) {
-                                var a2 = $("<a/>");
-                                a2.attr("href", e.html_url);
-                                a2.text("(Source)");
-                                desc.append(a2);
-                            }
+                            a.append(desc);
+                            //if(e.homepage) {
+                            //    var a2 = $("<a/>");
+                            //    a2.attr("href", e.html_url);
+                            //    a2.text("(Source)");
+                            //    desc.append(a2);
+                            //}
+                            li.append(a);
+
                             $("#projects").append(li);
                         });
                 }
