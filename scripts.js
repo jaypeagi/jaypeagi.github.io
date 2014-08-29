@@ -17,7 +17,7 @@ $(function() {
                             h3.text(e.name);
                             li.append(a);
                             var desc = $("<p></p>");
-                            var desc.text(e.description);
+                            desc.text(e.description);
                             li.append(desc);
                             if(e.homepage) {
                                 var a2 = $("<a/>");

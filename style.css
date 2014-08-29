@@ -19,6 +19,8 @@ header svg.monogram{
 
 header a .icon path, header a:hover .icon path {
     stroke: crimson;
+    fill: crimson;
+
 }
 
 a:hover .icon path, a:hover .icon rect {
