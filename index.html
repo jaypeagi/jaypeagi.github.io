@@ -1,100 +1,33 @@
-<!DOCTYPE html>
-<html>
-    <head>
-        <title>Joe on GitHub</title>
-        <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-        
-        <link rel="shortcut icon" href="http://joe.gl/favicon.ico" type="image/x-icon"/>
-        <link rel="apple-touch-icon" href="http://joe.gl/Content/appleicons/apple-touch-icon.png"/>
-        <link rel="apple-touch-icon" sizes="57x57" href="http://joe.gl/Content/appleicons/apple-touch-icon-57x57.png"/>
-        <link rel="apple-touch-icon" sizes="72x72" href="http://joe.gl/Content/appleicons/apple-touch-icon-72x72.png"/>
-        <link rel="apple-touch-icon" sizes="114x114" href="http://joe.gl/Content/appleicons/apple-touch-icon-114x114.png"/>
-        <link rel="apple-touch-icon" sizes="144x144" href="http://joe.gl/Content/appleicons/apple-touch-icon-144x144.png"/>
-        <link rel="apple-touch-icon" sizes="57x57" href="http://joe.gl/Content/appleicons/apple-touch-icon-60x60.png"/>
-        <link rel="apple-touch-icon" sizes="72x72" href="http://joe.gl/Content/appleicons/apple-touch-icon-120x120.png"/>
-        <link rel="apple-touch-icon" sizes="114x114" href="http://joe.gl/Content/appleicons/apple-touch-icon-76x76.png"/>
-        <link rel="apple-touch-icon" sizes="144x144" href="http://joe.gl/Content/appleicons/apple-touch-icon-152x152.png"/>
-        
-        <!--<link rel="stylesheet" href="http://joe.gl/Content/Site.css" />-->
-        <style>
-                       
-            nav section {
-                margin: 1em;
-            }
-            
-            #orgs img {
-                max-width: 50px;
-            }
-        </style>
-    </head>
-    <body>
-        <h1>
-            Joe On GitHub
-        </h1>
-		
-		<p>Please be patient: My homepage just got a revamp and I'm yet to refresh this page!</p>
-        
-        <nav>
-            <section>
-                <ul id="nav">
-                    <li><a href="http://joe.gl">My Homepage</a></li>
-                    <li><a href="https://github.com/glombek">My GitHub Profile</a></li>
-                    <li><a href="http://average-joe.info">Average Joe - Developer Blog</a></li>
-                </ul>
-            </section>
-            
-            <section>
-                <h2>My Recently Updated Projects:</h2>
-                <ul id="projects">
-                </ul>
-            </section>
-            
-            <section>
-                <h2>Also a Member of:</h2>
-                <div id="orgs">
-                </div>
-            </section>
-        </nav>
-        <footer>&copy; <a href="http://joe.gl/ombek">Joe Glombek</a> 2014</footer>
-        
-        <script type="text/javascript" src="http://code.jquery.com/jquery-2.1.0.min.js"></script>
-        <script>
-            $(function() {
-                $.get("https://api.github.com/users/glombek/repos",
-                      { sort: "updated" },
-                      function(data) {
-                        $.each(data, function(i, e) {
-                            if(i > 9) return false;
-                            var li = $("<li/>");
-                            var a = $("<a/>");
-                            a.attr("href", e.homepage || e.html_url);
-                            a.text(e.description || e.name);
-                            li.append(a);
-                            if(e.homepage) {
-                                var a2 = $("<a/>");
-                                a2.attr("href", e.html_url);
-                                a2.text("Source");
-                                li.append(" | ");
-                                li.append(a2);
-                            }
-                            $("#projects").append(li);
-                        });
-                });
-                $.get("https://api.github.com/users/glombek/orgs",
-                      function(data) {
-                        $.each(data, function(i, e) {
-                            if(i > 9) return false;
-                            //var li = $("<li/>");
-                            var a = $("<a/>");
-                            var img = $("<img/>");
-                            a.attr("href", "https://github.com/orgs/" + e.login);
-                            a.attr("title", e.login);
-                            img.attr("src", e.avatar_url);
-                            a.append(img);
-                            $("#orgs").append(a);
-                        });
-                });
-            });
-        </script>
-    </body>
-</html>
+---
+layout: default
+---
+
+<p>
+    Here's a list of little projects of mine.
+</p>
+
+<ul class="links">
+    <li>
+        <a href="http://joe.gl/ombek" title="My Homepage" class="">
+            {% include profile.svg %}
+        </a>
+    </li>
+    <li>
+        <a href="http://github.com/glombek" title="My GitHub Profile" class="github">
+            {% include github.svg %}
+        </a>
+    </li>
+    <li>
+        <a href="http://average-joe.info" title="My Tech Blog, Average Joe" class="">
+            {% include knowledge.svg %}
+        </a>
+    </li>
+</ul>
+
+<h2>Recent Labs</h2>
+<ul id="projects" class="grid">
+</ul>
+
+<!--<h2>GitHub Organisations</h2>
+<ul id="orgs" class="grid">
+</ul>-->
