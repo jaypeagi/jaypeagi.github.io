@@ -13,8 +13,8 @@ header a svg {
 }
 
 header svg.monogram{
-    margin-left: 25vm;
-    margin-left: 25vmin;
+    margin-left: -25vm;
+    margin-left: -25vmin;
 }
 
 header a .icon path, header a:hover .icon path {
