@@ -33,7 +33,7 @@ $(function() {
     var store = supports_html5_storage();
     
     var data = JSON.parse(localStorage["projects"]);
-    data.aquired = Date(data.aquired);
+    data.aquired = new Date(data.aquired);
     var today = new Date();
     today = new Date(today.getFullYear(), today.getMonth(), today.getDate());
     if(
