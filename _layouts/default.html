@@ -33,22 +33,20 @@
     <meta name="application-name" content="Joe Glombek">
 </head>
 <body class="projects">
-
-
     <header>
         <a href="{{site.baseurl}}/" class="projects">
-        
             {% include logo.svg %}{% include projects.svg %}
-        
         </a>
     </header>
-    <!--<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>-->
-
     <main>
         {{ content }}
     </main>
     <footer class="section">
         &copy; {{ site.author }} 2014
     </footer>
+    
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+    <script src="{{site.baseurl}}/scripts.js"></script>
+    
 </body>
 </html>
