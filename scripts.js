@@ -32,7 +32,7 @@ $(function() {
     
     var store = supports_html5_storage();
     
-    var data = localStorage["projects"];
+    var data = JSON.parse(localStorage["projects"]);
     var today = new Date();
     today = new Date(today.getFullYear(), today.getMonth(), today.getDate());
     if(
@@ -51,7 +51,7 @@ $(function() {
                       { sort: "updated" },
                       function(data) {
                           if(store) {
-                              localStorage["projects"] = { aquired: new Date(), data: data };
+                              localStorage["projects"] = JSON.stringify({ aquired: new Date(), data: data });
                               
                           }
                           showData(data);
