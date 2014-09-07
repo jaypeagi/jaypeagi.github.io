@@ -31,18 +31,16 @@ $(function() {
                 }
     
     var store = supports_html5_storage();
+            var data;
+            var valid = false;
+            if(store && localStorage["projects"]) {
+                data = JSON.parse(localStorage["projects"]);
+                data.aquired = moment(data.aquired);
+                valid = moment().diff(data.aquired.add(1, "days")) < 0;
+            }
     
-    var data = JSON.parse(localStorage["projects"]);
-    data.aquired = new Date(data.aquired);
-    var today = new Date();
-    today = new Date(today.getFullYear(), today.getMonth(), today.getDate());
-    if(
-        store
-            && data
-            && data.aquired.getYear() == today.getYear()
-            && data.aquired.getMonth() == today.getMonth()
-            && data.aquired.getDate() == today.getDate()
-      ) {
+    
+    if(valid) {
         showData(data.data);
     } else {
         
@@ -52,7 +50,7 @@ $(function() {
                       { sort: "updated" },
                       function(data) {
                           if(store) {
-                              localStorage["projects"] = JSON.stringify({ aquired: new Date(), data: data });
+                              localStorage["projects"] = JSON.stringify({ aquired: moment().format("YYYY-MM-DD HH:mm"), data: data });
                               
                           }
                           showData(data);
