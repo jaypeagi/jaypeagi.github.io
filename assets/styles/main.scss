@@ -1,0 +1,137 @@
+---
+---
+@import url('https://fonts.googleapis.com/css?family=Cabin+Sketch:700|Reenie+Beanie|Zilla+Slab+Highlight:700|Zilla+Slab:700');
+
+*, *:before, *:after {
+  box-sizing: border-box;
+}
+
+body, html {
+  padding: 0;
+  margin: 0;
+  color: white;
+  font-size: 2vmin;
+}
+
+h1, h2, h3, h4, h5 {
+  font-weight:normal;
+}
+
+.divisions{ 
+    &:hover ._division {
+      width: 44%;
+      
+      @media (orientation: portrait) {
+        width:100%;
+        height: 42%;
+      }
+    } 
+  
+  ._division {
+    &:before {
+      content: '';
+      background-color: rgba(0,0,0,0.5);
+      position:absolute;
+      top:0;
+      left:0;
+      right:0;
+      bottom:0;
+    }
+    
+    background-color:black;
+    position:absolute;
+    overflow:hidden;
+    
+    width: 52%;
+    
+    left:0;
+    right: auto;
+    top:0;
+    min-height:100%;
+    clip-path: polygon(0% 0%, 100% 0%, calc(100% - 5vw) 100%, 0% 100%);
+
+    @media (orientation: portrait) {
+      height: 51%;
+      width: 100%;
+      
+      left:0;
+    right: 0;
+    top:0;
+      bottom:auto;
+    min-height:auto;
+    clip-path: polygon(0% 0%, 100% 0%, 100% calc(100% - 5vw), 0% 100%);
+    }
+    
+    transition: width ease-in-out 1s, height ease-in-out 1s, font-size ease-in-out 1s;
+    
+    text-align:right;
+    padding: 0 5vh 0 0;
+    
+    @media (orientation: portrait) {
+       padding: 0;
+      }
+    
+    &:nth-child(2) {
+      left: auto;
+      right:0;
+      clip-path: polygon(5vw 0%, 100% 0%, 100% 100%, 0% 100%);
+      
+      
+      text-align:left;
+      padding: 0 0 0 19vh;
+      
+      @media (orientation: portrait) {
+      top: auto;
+      bottom:0;
+      clip-path: polygon(0% 5vw, 100% 0%, 100% 100%, 0% 100%);
+        padding:0;
+      }
+            
+      
+    }
+   
+    
+    
+    &:hover {
+      //clip-path: polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%);
+      width: 60%;
+      z-index:2;
+      
+      font-size: 1.5rem;
+      
+      @media (orientation: portrait) {
+        width: 100%;
+        height: 60%;
+      }
+    }
+    
+    background-size: cover;
+    background-position: center center;
+    h1 {
+      font-size: 3em;
+      padding-top: 50vh;
+      padding-bottom: 0;
+      margin:0;
+      transform: translateY(-50%);
+    }
+    
+    &.-explore {
+      background-image: url("../img/explore.jpg");
+      font-family: 'Reenie Beanie', sans-serif;
+      //Amatic+SC:700|Devonshire|Pangolin|Reenie+Beanie|Schoolbell
+      em {
+        font-style: normal;
+        font-family: 'Cabin Sketch', sans-serif;
+      }
+    }
+    &.-dev {
+      background-image: url("../img/dev.jpg");
+      font-family: 'Zilla Slab', monospace;
+      
+      em {
+        font-style: normal;
+        font-family: 'Zilla Slab Highlight', monospace;
+      }
+    }
+  }
+}
