@@ -1,1 +1,11 @@
+{% include layout/header.html %}
+<header class="header -{{ page.section }}">
+
+</header>
+
 {{content}}
+
+<footer>
+&copy; Joe Glombek {{ site.time | date: "%Y" }}
+</footer>
+{% include layout/footer.html %}

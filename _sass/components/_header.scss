@@ -1,0 +1,9 @@
+.header {
+    &.-explore {
+        background-image: $img-explore;
+    }
+    &.-dev {
+        background-image: $img-dev;
+    }
+    background-size: cover;
+}
