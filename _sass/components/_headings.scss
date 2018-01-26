@@ -1,0 +1,27 @@
+.dev, .divisions ._division.-dev {
+    h1 {
+        font-family: $font-secondary-dev;
+        em {
+            font-style: normal;
+            font-family: $font-primary-dev;
+        }
+    }
+
+    h2, h3, h4, h5, h6 {
+        font-family: $font-primary-dev;        
+    }
+}
+
+.explore, .divisions ._division.-explore {
+    h1 {
+        font-family: $font-secondary-explore;
+        em {
+            font-style: normal;
+            font-family: $font-primary-explore;
+        }
+    }
+
+    h2, h3, h4, h5, h6 {
+        font-family: $font-secondary-explore;        
+    }
+}

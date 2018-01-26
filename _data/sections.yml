@@ -1,0 +1,16 @@
+dev:
+    name: joe.gl/ombek
+    tagLine: /developer
+    url: /ombek/developer
+    class: dev
+explore:
+    name: Joe Glombek
+    tagLine: Outdoorsman
+    url: /ombek/outdoorsman
+    class: explore
+none:
+    hidden: 1
+    name: joe.gl/ombek
+    tagLine:
+    url: /ombek
+    class: dev

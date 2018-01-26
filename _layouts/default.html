@@ -1,53 +1,32 @@
-<!DOCTYPE html>
+{% include layout/header.html %}
+{% assign sect = site.data.sections[page.section] %}
 
-<html>
-<head>
-    <title>{% if page.title %} {{ page.title }} | {% endif %} {{ site.name }}</title>
-        
-    <link href='//fonts.googleapis.com/css?family=Roboto+Slab:700|Roboto+Condensed:300italic,300' rel='stylesheet' type='text/css'>
-    
-    <link rel="stylesheet" href="http://joe.gl/content/site.css" />
-        <link rel="stylesheet" href="{{site.baseurl}}/style.css" />
-        <meta name="description" content="{{site.description}}"/>
-        <meta name="author" content="{{site.author}}"/>
-    
-    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-
-    <link rel="shortcut icon" href="{{site.baseurl}}/favicon.ico">
-    <link rel="apple-touch-icon" sizes="57x57" href="http://joe.gl/content/icons/logos/apple-touch-icon-57x57.png">
-    <link rel="apple-touch-icon" sizes="114x114" href="http://joe.gl/content/icons/logos/apple-touch-icon-114x114.png">
-    <link rel="apple-touch-icon" sizes="72x72" href="http://joe.gl/content/icons/logos/apple-touch-icon-72x72.png">
-    <link rel="apple-touch-icon" sizes="144x144" href="http://joe.gl/content/icons/logos/apple-touch-icon-144x144.png">
-    <link rel="apple-touch-icon" sizes="60x60" href="http://joe.gl/content/icons/logos/apple-touch-icon-60x60.png">
-    <link rel="apple-touch-icon" sizes="120x120" href="http://joe.gl/content/icons/logos/apple-touch-icon-120x120.png">
-    <link rel="apple-touch-icon" sizes="76x76" href="http://joe.gl/content/icons/logos/apple-touch-icon-76x76.png">
-    <link rel="apple-touch-icon" sizes="152x152" href="http://joe.gl/content/icons/logos/apple-touch-icon-152x152.png">
-    <meta name="apple-mobile-web-app-title" content="Joe Glombek">
-    <link rel="icon" type="image/png" href="http://joe.gl/content/icons/logos/favicon-196x196.png" sizes="196x196">
-    <link rel="icon" type="image/png" href="http://joe.gl/content/icons/logos/favicon-160x160.png" sizes="160x160">
-    <link rel="icon" type="image/png" href="http://joe.gl/content/icons/logos/favicon-96x96.png" sizes="96x96">
-    <link rel="icon" type="image/png" href="http://joe.gl/content/icons/logos/favicon-16x16.png" sizes="16x16">
-    <link rel="icon" type="image/png" href="http://joe.gl/content/icons/logos/favicon-32x32.png" sizes="32x32">
-    <meta name="msapplication-TileColor" content="#ba55d3">
-    <meta name="msapplication-TileImage" content="http://joe.gl/content/icons/logos/mstile-144x144.png">
-    <meta name="application-name" content="Joe Glombek">
-</head>
-<body class="projects">
-    <header>
-        <a href="{{site.baseurl}}/" class="projects">
-            {% include logo.svg %}{% include projects.svg %}
-        </a>
+<div class="page">
+    <header class="header -{{ page.section }}">
+        <h1>
+            {{sect.name}}<br /><em>{{sect.tagLine}}</em>
+        </h1>
+        <!-- <nav class="_nav">
+            <ul>
+                
+      {% assign docs = site.pages | sort: 'nav-order' %}
+                    {% for doc in docs %}
+                    {% if doc.section == page.section %}
+                      <li><a class="nav-item {% if doc.url == page.url %}-current{% endif %}" href="{{ doc.url }}">{{ doc.title }}</a></li>
+                    {% endif %}
+                  {% endfor %}
+        </ul>
+        </nav> -->
     </header>
-    <main>
-        {{ content }}
+
+    <main class="content">
+        {{content}}
     </main>
-    <footer class="section">
-        &copy; {{ site.author }} 2014
-    </footer>
-    
-    <script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
-    <script src="//cdnjs.cloudflare.com/ajax/libs/moment.js/2.8.2/moment.min.js"></script>
-    <script src="{{site.baseurl}}/scripts.js"></script>
-    
-</body>
-</html>
+</div>
+
+<footer class="footer">
+    <div class="_wrapper">
+&copy; Joe Glombek {{ site.time | date: "%Y" }}
+</div>
+</footer>
+{% include layout/footer.html %}

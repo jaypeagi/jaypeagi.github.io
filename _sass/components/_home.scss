@@ -1,0 +1,126 @@
+.divisions{ 
+  
+  color: white;
+    &:hover ._division {
+      width: 44%;
+      
+      @media (orientation: portrait) {
+        width:100%;
+        height: 42%;
+      }
+    } 
+  
+  ._division {
+    &:before {
+      content: '';
+      background-color: $color-overlay;
+      position:absolute;
+      top:0;
+      left:0;
+      right:0;
+      bottom:0;
+    }
+    text-decoration: none;
+    color:inherit;
+    background-color:black;
+    position:absolute;
+    overflow:hidden;
+    
+    width: 52%;
+    
+    left:0;
+    right: auto;
+    top:0;
+    bottom:0;
+    clip-path: polygon(0% 0%, 100% 0%, calc(100% - 5vw) 100%, 0% 100%);
+
+    
+    font-size: 1.5vw;
+
+    @media (orientation: portrait) {
+      height: 51%;
+      width: 100%;
+      font-size: 3vw;
+    
+      left:0;
+    right: 0;
+    top:0;
+      bottom:auto;
+    min-height:auto;
+    clip-path: polygon(0% 0%, 100% 0%, 100% calc(100% - 5vw), 0% 100%);
+    }
+    
+    transition: width ease-in-out 1s, height ease-in-out 1s;
+    
+    text-align:right;
+    padding: 0 10vh 0 0;
+    
+    @media (orientation: portrait) {
+       padding: 0 1em;
+      }
+    
+    &:nth-child(2) {
+      left: auto;
+      right:0;
+      clip-path: polygon(5vw 0%, 100% 0%, 100% 100%, 0% 100%);
+      
+      
+      text-align:left;
+      padding: 0 0 0 10vh;
+      
+      @media (orientation: portrait) {
+      top: auto;
+      bottom:0;
+      clip-path: polygon(0% 5vw, 100% 0%, 100% 100%, 0% 100%);
+        padding:0 1em;
+      }
+            
+      
+    }
+   
+    
+    
+    &:hover {
+      //clip-path: polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%);
+      width: 60%;
+                 
+      @media (orientation: portrait) {
+        width: 100%;
+        height: 60%;
+      }
+
+      h1 {
+        font-size: 4em;
+      }
+    }
+    
+    background-size: cover;
+    background-position: center center;
+    h1 {
+      font-size: 3em;
+      position: relative;
+      top: 50%;
+      margin:0;
+
+      transform: translateY(-50%);
+      transition: font-size ease-in-out 1s;
+    }
+    
+    &.-explore {
+      background-image: $img-explore;
+
+      .icon {
+        display: block;
+        height: 1em;
+        color: white;
+      }
+    }
+    &.-dev {
+      background-image: $img-dev;
+    }
+  }
+}
+
+svg {
+  fill: currentColor;
+}
