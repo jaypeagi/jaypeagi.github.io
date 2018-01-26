@@ -1,11 +1,32 @@
 {% include layout/header.html %}
-<header class="header -{{ page.section }}">
+{% assign sect = site.data.sections[page.section] %}
 
-</header>
+<div class="page">
+    <header class="header -{{ page.section }}">
+        <h1>
+            {{sect.name}}<br /><em>{{sect.tagLine}}</em>
+        </h1>
+        <!-- <nav class="_nav">
+            <ul>
+                
+      {% assign docs = site.pages | sort: 'nav-order' %}
+                    {% for doc in docs %}
+                    {% if doc.section == page.section %}
+                      <li><a class="nav-item {% if doc.url == page.url %}-current{% endif %}" href="{{ doc.url }}">{{ doc.title }}</a></li>
+                    {% endif %}
+                  {% endfor %}
+        </ul>
+        </nav> -->
+    </header>
 
-{{content}}
+    <main class="content">
+        {{content}}
+    </main>
+</div>
 
-<footer>
+<footer class="footer">
+    <div class="_wrapper">
 &copy; Joe Glombek {{ site.time | date: "%Y" }}
+</div>
 </footer>
 {% include layout/footer.html %}

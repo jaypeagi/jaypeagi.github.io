@@ -1,0 +1,44 @@
+
+.dev {
+    background-image: $img-dev;
+    &:before {        
+        background-color: rgba(darken($color-green-darkest, 7.5%), 0.9);
+    }
+}
+.explore {
+    background-image: $img-explore;
+    &:before {   
+        background-color: rgba(darken($color-orange-darkest, 7.5%), 0.9);
+    }
+}
+
+.dev, .explore {
+    background-size: cover;
+    background-attachment: fixed;
+    background-position: center;
+    position: relative;
+    padding-bottom: 90vh;
+    &:before {
+        content: '';
+        position:absolute;
+        top:0;
+        left:0;
+        right:0;
+        bottom:0;
+      }
+}
+
+.footer {
+    color:white;
+    position: absolute;
+    bottom:0;
+    left: 0;
+    right: 0;
+    ._wrapper {
+        @extend %container;
+    }
+
+    &.-home {
+        font-size: 0.5em;
+    }
+}

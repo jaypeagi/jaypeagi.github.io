@@ -1,7 +1,6 @@
 {% include layout/header.html %}
 <div class="divisions">
-    <a class="_division -dev" href="/developer">
-      <!--<h1>browsing<br />log <em>files</em></h1>-->
+    <!-- <a class="_division -dev" href="/developer">
       <h1>
           joe.gl/ombek<br /><em>/developer</em>
           <br />
@@ -9,13 +8,28 @@
         </h1>
       </a>
     <a class="_division -explore" href="/outdoorsman">
-      <!--<h1>building<br />log <em>fires</em></h1>-->
       <h1>
           Joe Glombek<br /><em>Outdoorsman</em>
           {% include svg/arrow.svg %}
         </h1>
-      </a>
-</div>
-Arrow by Alex Muravev from the Noun Project
+      </a> -->
 
+    {% for sect_hash in site.data.sections %}
+    {% assign sect = sect_hash[1] %}
+    {% if sect.hidden != 1 %}
+    <a class="_division -{{sect.class}}" href="{{sect.url}}">
+      <!--<h1>building<br />log <em>fires</em></h1>-->
+      <h1>
+          {{sect.name}}<br /><em>{{sect.tagLine}}</em>
+          {% if sect.class == "explore" %}{% include svg/arrow.svg %}{% endif %}
+          {% if sect.class == "dev" %}<br /><i class="far fa-chevron-double-left"></i>{% endif %}
+      </h1>
+    </a>
+    {%endif%}
+    {%endfor%}
+</div>
+<footer class="footer -home">
+  &copy; Joe Glombek {{ site.time | date: "%Y" }} | 
+Arrow by Alex Muravev from the Noun Project
+</footer>
 {% include layout/footer.html %}

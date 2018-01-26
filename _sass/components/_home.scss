@@ -20,7 +20,8 @@
       right:0;
       bottom:0;
     }
-    
+    text-decoration: none;
+    color:inherit;
     background-color:black;
     position:absolute;
     overflow:hidden;
@@ -30,7 +31,7 @@
     left:0;
     right: auto;
     top:0;
-    min-height:100%;
+    bottom:0;
     clip-path: polygon(0% 0%, 100% 0%, calc(100% - 5vw) 100%, 0% 100%);
 
     
@@ -39,7 +40,7 @@
     @media (orientation: portrait) {
       height: 51%;
       width: 100%;
-    font-size: 4vw;
+      font-size: 3vw;
     
       left:0;
     right: 0;
@@ -49,13 +50,13 @@
     clip-path: polygon(0% 0%, 100% 0%, 100% calc(100% - 5vw), 0% 100%);
     }
     
-    transition: width ease-in-out 1s, height ease-in-out 1s, font-size ease-in-out 1s;
+    transition: width ease-in-out 1s, height ease-in-out 1s;
     
     text-align:right;
-    padding: 0 5vh 0 0;
+    padding: 0 10vh 0 0;
     
     @media (orientation: portrait) {
-       padding: 0;
+       padding: 0 1em;
       }
     
     &:nth-child(2) {
@@ -65,13 +66,13 @@
       
       
       text-align:left;
-      padding: 0 0 0 19vh;
+      padding: 0 0 0 10vh;
       
       @media (orientation: portrait) {
       top: auto;
       bottom:0;
       clip-path: polygon(0% 5vw, 100% 0%, 100% 100%, 0% 100%);
-        padding:0;
+        padding:0 1em;
       }
             
       
@@ -82,13 +83,14 @@
     &:hover {
       //clip-path: polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%);
       width: 60%;
-      z-index:2;
-      
-      font-size: 1.1rem;
-      
+                 
       @media (orientation: portrait) {
         width: 100%;
         height: 60%;
+      }
+
+      h1 {
+        font-size: 4em;
       }
     }
     
@@ -99,16 +101,13 @@
       position: relative;
       top: 50%;
       margin:0;
+
       transform: translateY(-50%);
+      transition: font-size ease-in-out 1s;
     }
     
     &.-explore {
       background-image: $img-explore;
-      font-family: $font-secondary-explore;
-      em {
-        font-style: normal;
-        font-family: $font-primary-explore;
-      }
 
       .icon {
         display: block;
@@ -118,12 +117,6 @@
     }
     &.-dev {
       background-image: $img-dev;
-      font-family: $font-secondary-dev;
-      
-      em {
-        font-style: normal;
-        font-family: $font-primary-dev;
-      }
     }
   }
 }

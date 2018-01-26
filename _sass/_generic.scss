@@ -6,9 +6,24 @@
     padding: 0;
     margin: 0;
     font-family: $font-default;
+    min-height: 100%;
+    font-size: 1.1rem;
   }
   
   h1, h2, h3, h4, h5 {
     font-weight:normal;
+    font-size: 1.5em;
   }
   
+  h1 {
+    font-size: 2em;
+  }
+
+  a {
+    .dev & {
+      color: $color-green;
+    }
+    .explore & {
+      color: $color-orange;
+    }
+  }
