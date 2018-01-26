@@ -16,4 +16,4 @@ A British Canoeing instructor, bushcraft camp leader and Scout leader who enjoys
 You don't have to be someone else or somewhere else to live adventurously and I aim to encourage daily exploration in everybody's day to day life.
 
 ## Latest Adventure
-Follow my adventures on [Instagram](https://instagr.am/JoeGlombek) and on my [travel journal](https://journal.joe.gl).
+Follow my adventures on [Instagram](https://instagr.am/joeglombek) and on my [travel journal](https://journal.joe.gl).
