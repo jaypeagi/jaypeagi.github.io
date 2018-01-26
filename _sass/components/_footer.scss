@@ -13,9 +13,13 @@
 }
 
 .dev, .explore {
-    background-size: cover;
-    background-attachment: fixed;
-    background-position: center;
+    background: {
+        size: cover;
+    attachment: fixed;
+    position: center;
+    repeat: no-repeat;
+    }
+
     position: relative;
     padding-bottom: 90vh;
     &:before {

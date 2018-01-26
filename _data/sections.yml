@@ -3,14 +3,17 @@ dev:
     tagLine: /developer
     url: /ombek/developer
     class: dev
+    colour: "#007A8B"
 explore:
     name: Joe Glombek
     tagLine: Outdoorsman
     url: /ombek/outdoorsman
     class: explore
-none:
+    colour: "#E26D00"
+na:
     hidden: 1
     name: joe.gl/ombek
     tagLine:
     url: /ombek
     class: dev
+    colour: "#690197"
