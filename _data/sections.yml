@@ -10,10 +10,13 @@ explore:
     url: /ombek/outdoorsman/
     class: explore
     colour: "#E26D00"
-na:
+404:
     hidden: 1
     name: joe.gl/ombek
     tagLine:
     url: /ombek/
     class: dev
+    colour: "#690197"
+home:
+    hidden: 1
     colour: "#690197"

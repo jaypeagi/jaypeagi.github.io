@@ -1,7 +1,7 @@
 ---
 layout: home
 
-section: na
+section: home
 
 title: Joe Glombek
 redirect_from:
