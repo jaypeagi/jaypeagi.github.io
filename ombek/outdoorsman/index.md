@@ -7,7 +7,7 @@ section: explore
 nav-order: 0
 
 redirect_from:
-    - "/ombek/career/"
+    - "/ombek/hobbies/"
 ---
 ## Lover of adventure.
 A British Canoeing instructor, bushcraft camp leader and Scout leader who enjoys hiking, cycling, going for a dip in any discovered large body of water, surfing, kayaking, canoeing, stand up paddleboarding, photography and videography.
