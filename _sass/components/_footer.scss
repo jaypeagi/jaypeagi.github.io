@@ -42,6 +42,15 @@
         @extend %container;
     }
 
+    .dev & {
+        font-family: $font-primary-dev;
+    }
+    
+    .explore & {
+        font-family: $font-secondary-explore;
+        font-size: 1.3em;
+    }
+    
     &.-home {
         font-size: 0.5em;
     }
