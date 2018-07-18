@@ -18,7 +18,4 @@ You don't have to be someone else or somewhere else to live adventurously and I 
 ## Latest Adventure
 Follow my adventures on [Instagram](https://instagr.am/joeglombek) and on my [travel journal](https://journal.joe.gl).
 
-## Inspiration to your inbox
-Sign up to the Library of Adventure and I'll send you regular pointers and inspiration.
-
 {% include newsletter.html %}
