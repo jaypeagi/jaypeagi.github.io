@@ -1,0 +1,24 @@
+.form {
+  background-color: lighten($color: $color-orange, $amount: 30);
+  overflow: hidden;
+
+  >._group {
+    display: flex;
+    flex-wrap: wrap;
+    margin: 1em;
+    align-items: center;
+
+    &.-actions {
+      justify-content: flex-end;
+    }
+
+    >._label {
+      flex: 40%; 
+      padding: 0.5rem 0.5rem 0.5rem 0;
+    }
+
+    >._field {
+      flex: 60%; 
+    }
+  }
+}

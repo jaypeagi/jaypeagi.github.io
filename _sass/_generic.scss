@@ -29,3 +29,29 @@
       color: $color-orange;
     }
   }
+
+  input {
+    padding: 0.5rem;
+    border: 1px solid $color-orange-dark;
+    font-family: $font-default;
+    font-size: 1rem;
+  }
+
+  button, input[type=button], input[type=submit] {
+    background-color: $color-orange;
+    color: white;
+    border:none;
+    font-family: $font-secondary-explore;
+    font-size: 1.5em;
+    outline: none;
+    transition: all ease-in-out 0.2s;
+
+    &:hover, &:focus {
+      background-color: $color-orange-light;
+      box-shadow: 0.2rem 0.2rem 0px 0px $color-orange-darkest;      
+    }
+
+    &:active {
+      background-color: $color-orange-lightest; 
+    }
+  }
